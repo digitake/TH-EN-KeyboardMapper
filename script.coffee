@@ -5,8 +5,8 @@ $ ->
   window._mapTH = ([TH_KEYS[i],EN_KEYS[i]] for i in [0...TH_KEYS.length]).reduce ((cont,obj) -> cont[obj[0]] = obj[1]; cont), {}
   window._mapEN = ([EN_KEYS[i],TH_KEYS[i]] for i in [0...EN_KEYS.length]).reduce ((cont,obj) -> cont[obj[0]] = obj[1]; cont), {}
 
-  window.mapTH2EN = (s) -> (if x of _mapTH then _mapTH[x] else x for x in s)
-  window.mapEN2TH = (s) -> (if x of _mapEN then _mapTH[x] else x for x in s)
+  window.mapTH2EN = (s) -> ((if x of _mapTH then _mapTH[x] else x) for x in s)
+  window.mapEN2TH = (s) -> ((if x of _mapEN then _mapTH[x] else x) for x in s)
 
 
   $('#boxTH').on 'keypress', (e) ->

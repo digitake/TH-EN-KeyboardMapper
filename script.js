@@ -28,29 +28,21 @@
     }), {});
     window.mapTH2EN = function(s) {
       var j, len, results, x;
-      if (x in _mapTH) {
-        return _mapTH[x];
-      } else {
-        results = [];
-        for (j = 0, len = s.length; j < len; j++) {
-          x = s[j];
-          results.push(x);
-        }
-        return results;
+      results = [];
+      for (j = 0, len = s.length; j < len; j++) {
+        x = s[j];
+        results.push(x in _mapTH ? _mapTH[x] : x);
       }
+      return results;
     };
     window.mapEN2TH = function(s) {
       var j, len, results, x;
-      if (x in _mapEN) {
-        return _mapTH[x];
-      } else {
-        results = [];
-        for (j = 0, len = s.length; j < len; j++) {
-          x = s[j];
-          results.push(x);
-        }
-        return results;
+      results = [];
+      for (j = 0, len = s.length; j < len; j++) {
+        x = s[j];
+        results.push(x in _mapEN ? _mapTH[x] : x);
       }
+      return results;
     };
     $('#boxTH').on('keypress', function(e) {
       return $('#boxEN').val(mapTH2EN($('#boxTH').val()));
