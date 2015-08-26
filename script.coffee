@@ -10,7 +10,7 @@ $ ->
 
 
   $('#boxTH').on 'keypress', (e) ->
-    $('#boxEN').val mapTH2EN $('#boxTH').val()
+    $('#boxEN').val (mapTH2EN ($('#boxTH').val()+String.fromCharCode(e.keyCode || e.charCode))).join('')
 
   $('#boxEN').on 'keypress', (e) ->
-    $('#boxTH').val mapEN2TH $('#boxEN').val()
+    $('#boxTH').val (mapEN2TH ($('#boxEN').val()+String.fromCharCode(e.keyCode || e.charCode))).join('')

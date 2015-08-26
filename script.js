@@ -45,10 +45,10 @@
       return results;
     };
     $('#boxTH').on('keypress', function(e) {
-      return $('#boxEN').val(mapTH2EN($('#boxTH').val()));
+      return $('#boxEN').val((mapTH2EN($('#boxTH').val() + String.fromCharCode(e.keyCode || e.charCode))).join(''));
     });
     return $('#boxEN').on('keypress', function(e) {
-      return $('#boxTH').val(mapEN2TH($('#boxEN').val()));
+      return $('#boxTH').val((mapEN2TH($('#boxEN').val() + String.fromCharCode(e.keyCode || e.charCode))).join(''));
     });
   });
 
