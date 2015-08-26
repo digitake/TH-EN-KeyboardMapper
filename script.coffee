@@ -3,4 +3,4 @@ $ ->
     s
 
   $('#boxTH').on 'keypress', (e) ->
-    $('#boxEN'.text mapTH2EN($('#boxTH').text()))
+    $('#boxEN'.val mapTH2EN $('#boxTH').val())
