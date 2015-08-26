@@ -6,7 +6,7 @@
       return s;
     };
     return $('#boxTH').on('keypress', function(e) {
-      return $('#boxEN'.text(mapTH2EN($('#boxTH').text())));
+      return $('#boxEN'.val(mapTH2EN($('#boxTH').val())));
     });
   });
 
